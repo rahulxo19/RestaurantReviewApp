@@ -1,4 +1,5 @@
 const Express = require("express");
+const cors = require("cors");
 const sequelize = require("./utils/database");
 const Restaurant = require("./models/restaurants");
 const Review = require("./models/review");
@@ -7,6 +8,7 @@ const app = Express();
 
 const restaurantRoutes = require("./routes/restaurantRoutes");
 
+app.use(cors());
 app.use(Express.json());
 app.use(Express.urlencoded({ extended: true }));
 
