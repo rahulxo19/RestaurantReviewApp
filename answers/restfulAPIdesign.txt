@@ -1,0 +1,6 @@
+
+http verb           API Endpoints           Description
+GET                 /restaurants            returns a list of all the restaurants
+GET                 /restaurants/:id        returns all the data related of a restaurant with id in params including reviews
+GET                 /restaurants/admin      returns a list of all restaurants with id, name and totalReviews
+POST                /restaurants/:id/reviews    posts the review to the specific restaurant with id in params

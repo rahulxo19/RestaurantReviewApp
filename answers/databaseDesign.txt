@@ -1,0 +1,32 @@
+A collection named restaurantapp will have two tables: restaurants and reviews.
+the restaurants table will have 4 attributes named as: id, name(restaurant name), address and details.
+the reviews table will have 3 attributes named as : id, reviewText and restaurantId.
+
+the format of these two tables would look like:
+
+restaurants
+id          integer,(primary key, not null, autoIncrement)
+name        string,
+address     string,
+details     text
+
+reviews
+id          integer,(primary key, not null, autoIncrement)
+reviewText  text,
+restaurantId    integer,(foreign key)
+
+SELECT `Restaurant`.`id`, `Restaurant`.`name`, `Reviews`.`id` AS `Reviews.id` FROM `Restaurants` AS `Restaurant` LEFT OUTER JOIN `Reviews` AS `Reviews` ON `Restaurant`.`id` = `Reviews`.`RestaurantId`;
+
+i am using sequelize which returns reviews table id's as array and simply use array.length for getting totalReviews.
+like: const restaurants = await Restaurant.findAll({
+      attributes: ["id", "name"],
+      include: {
+        model: Review,
+        attributes: ["id"],
+      },
+    });
+    const adminData = restaurants.map((restaurant) => ({
+      id: restaurant.id,
+      name: restaurant.name,
+      totalReviews: restaurant.Reviews.length,
+    }));
