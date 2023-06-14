@@ -1,0 +1,16 @@
+To Install and run the restaurant listing and review app, you will need to follow these steps:
+
+1. Make sure you have Node.js installed if not visit official Node.js website (https://nodejs.org) and install the latest version for you operating system.
+
+2. Fork the repository in your local system.
+
+3. After Forking, open terminal and run npm install in the project directory.
+   this will install all the necessary dependencies for running the app.
+
+4. Configure the database with your own collection, username and password of mysql workbench database.
+
+5. after database configuration start the server from terminal using command 'npm start'.
+
+6. now your server will be up on port 3000 now u just have to insert restaurants in the database, restaurants table. then open the Homepage.html file in your browser.
+
+Now the restaurant listing and review app is fully functionable.
