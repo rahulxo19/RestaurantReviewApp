@@ -1,6 +1,8 @@
 // Get the restaurant ID from the URL
-const restaurantId = localStorage.getItem("id");
-console.log(restaurantId);
+if (!sessionStorage.getItem("id")) {
+  alert("go back and select a restaurant for details");
+}
+const restaurantId = sessionStorage.getItem("id");
 
 const Name = document.getElementById("resName");
 Name.textContent = `${restaurantId}`;
@@ -67,7 +69,3 @@ axios
   .catch((error) => {
     console.error(error);
   });
-
-window.onunload = function () {
-  localStorage.removeItem("id");
-};

@@ -18,7 +18,7 @@ window.addEventListener("DOMContentLoaded", async () => {
                 `;
 
       listItem.addEventListener("click", () => {
-        localStorage.setItem("id", restaurant.id);
+        sessionStorage.setItem("id", restaurant.id);
         window.location.href = "./restaurantDetail.html";
       });
       restaurantList.appendChild(listItem);

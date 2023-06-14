@@ -1,0 +1,56 @@
+form {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: Arial, sans-serif;
+  vertical-align: baseline;
+}
+
+/* Page Layout */
+body {
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+form {
+  margin-top: 20px;
+}
+
+input[type="text"] {
+  width: 300px;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+button[type="submit"] {
+  padding: 5px 10px;
+  background-color: #428bca;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
