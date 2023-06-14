@@ -2,20 +2,23 @@
 const restaurantId = localStorage.getItem("id");
 console.log(restaurantId);
 
+const Name = document.getElementById("resName");
+Name.textContent = `${restaurantId}`;
+
 // Fetch the restaurant details and reviews from the backend
 axios
   .get(`http://localhost:3000/restaurants/${restaurantId}`)
   .then((response) => {
     console.log(response);
     const restaurant = response.data;
-
+    Name.textContent = `${restaurant.name}`;
     // Get the reference to the restaurant detail element
     const restaurantDetail = document.getElementById("restaurant-detail");
 
     // Create the HTML markup dynamically
     restaurantDetail.innerHTML = `
-      <h2>${restaurant.name}</h2>
-      <p>${restaurant.address}</p>
+      <h1>${restaurant.name}</h1>
+      <h2>${restaurant.address}</h2>
       <p>${restaurant.description}</p>
 
       <h3>Reviews</h3>
@@ -64,3 +67,7 @@ axios
   .catch((error) => {
     console.error(error);
   });
+
+window.onunload = function () {
+  localStorage.removeItem("id");
+};

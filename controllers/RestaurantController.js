@@ -40,20 +40,14 @@ exports.getAdminPage = async (req, res) => {
       attributes: ["id", "name"],
       include: {
         model: Review,
-        attributes: [],
+        attributes: ["id"],
       },
-      raw: true,
-      group: ["Restaurant.id"],
     });
-
     const adminData = restaurants.map((restaurant) => ({
       id: restaurant.id,
       name: restaurant.name,
-      totalReviews: restaurant["Reviews.id"]
-        ? restaurant["Reviews.id"].length
-        : 0,
+      totalReviews: restaurant.Reviews.length,
     }));
-
     res.json(adminData);
   } catch (err) {
     console.log(err);

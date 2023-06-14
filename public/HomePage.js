@@ -12,13 +12,13 @@ window.addEventListener("DOMContentLoaded", async () => {
     restaurants.forEach((restaurant) => {
       const listItem = document.createElement("li");
       listItem.innerHTML = `
-                  <h2>${restaurant.name}</h2>
-                  <p>${restaurant.address}</p>
-                </a>
-              `;
+                    <h2>${restaurant.name}</h2>
+                    <p>${restaurant.address}</p>
+                  </a>
+                `;
 
-      localStorage.setItem("id", restaurant.id);
       listItem.addEventListener("click", () => {
+        localStorage.setItem("id", restaurant.id);
         window.location.href = "./restaurantDetail.html";
       });
       restaurantList.appendChild(listItem);
